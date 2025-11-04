@@ -5,8 +5,9 @@ import { StyleSheet, Text, TextInput, View } from 'react-native';
 export default function App() {
   const [age,setAge] = useState<string>("")
   const Age:number = !isNaN(Number(age)) === true ? Number(age): 0 
-  const lowerLimit: number = (220-Age) * 0.65
-  const higherLimit: number = (220-Age) * 0.85
+  const lowerLimit: number = Age === 0 ? 0 : (220 - Age) * 0.65
+  const higherLimit: number = Age === 0 ? 0 : (220 - Age) * 0.85
+
 
 
   return (
